@@ -1,0 +1,7 @@
+TYPE,Precision,Recall,f1-score,support
+Healthy,0.97,1,0.99,143
+Late Blight,0.98,0.95,0.97,153
+Early Blight,0.98,0.98,0.98,125
+micro avg,0.98,0.98,0.98,421
+macro avg,0.98,0.98,0.98,421
+weighted avg,0.98,0.98,0.98,421
