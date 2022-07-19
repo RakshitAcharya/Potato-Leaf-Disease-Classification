@@ -40,6 +40,8 @@ Number of images in healthy = 152
 The number of images in the healthy category is 152 and the other categories have 1000 each. The imbalance in the data is of the ratio 1 : 6.5. Imbalanced classifications pose a challenge for predictive modelling as most of the deep learning algorithms will have poor predictive accuracy as there isn’t enough data for the model to learn the features of the minority class thus the images from the minority class will be classified wrongly.
 #### RandomOverSampler: (Novelty)
 To solve the above problem, RandomOverSampler was used which randomly chooses samples from the minority class and duplicates them with replacement in the dataset. This automatically balances the minority classes with the majority class/classes. The major demerit of this method is that it may cause overfitting of data in few models as the same samples of data are being duplicated and used for training purposes.
+<img width="562" alt="image" src="https://user-images.githubusercontent.com/69286061/179724424-fd70e169-887c-4160-89f7-cc67096e7721.png">
+
 
 #### ImageDataGenerator:
 It is an image augmentation technique that is used when there is not enough data to train the model. This is a great way to expand the size of our dataset. The transformation techniques used were horizontal_flip, rotation_range, zoom_range, width_shift_range, height_shift_range. Using these techniques, new transformed images from the original dataset will be used to train the model. This also helps in the model learning various images in different angles and perspectives and thus reduces the chances of the model overfitting the data.
@@ -52,6 +54,12 @@ Among all the four given models, ResNet50 outperforms the other models. The mode
 ### Interactive WebApp for prediction( GUI ):
 An interactive web application was developed which uses the ResNet50 model trained on the given dataset for classifying newly uploaded images.
 The web-app was developed using the streamlit package in python. Streamlit is an open source app framework which is used to build webapps for machine learning and data science related projects in a short period of time.
+
+![image](https://user-images.githubusercontent.com/69286061/179724560-0545c88a-a0c9-4c50-9297-102015899950.png)
+
+![image](https://user-images.githubusercontent.com/69286061/179724637-fd24fd26-3849-4cc3-8111-ad4e2f3a79e5.png)
+
+
 ## Conclusion
 In this study, a three-class classification problem is exhibited to detect infected potato leaves as early blight or late blight or healthy, in the earlier stages of the infection so that it can be treated as soon as possible. Considerable data augmentation using ImageDataGenerator and RandomOverSample is done on the data due to the imbalance in the dataset, and the data is then used to train various transfer learning CNN models, namely VGG16, VGG19, Mobilenet and ResNet50, and the results obtained are evaluated and assessed.
 The results show that ResNet50 performed the best among these four, achieving an validation accuracy of ~99.77% and further has been optimised to provide better results. Further, with these models, a WebApp GUI has been built to facilitate the use of these models by farmers and other relevant communities. We beleive that this work will be a notable contribution to the sector of agriculture. We hope that this work proves useful to the research communities to get familiar with the AI-based detection of potato leaves’ diseases. The model developed not only works on the benchmark dataset, but can also work on real-time images with a decent accuracy.
